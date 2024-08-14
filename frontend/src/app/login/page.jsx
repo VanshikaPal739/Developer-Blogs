@@ -39,13 +39,13 @@ const login = () => {
 })
 
   return (
-    <div className='bg-cover py-28 ' style={{backgroundImage: `url('https://st4.depositphotos.com/11135096/41861/i/450/depositphotos_418612740-stock-photo-business-technology-internet-network-concept.jpg')` }}>
+    <div className='bg-cover py-28 ' style={{backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ0SfAwcyaedQCkzzFxv28sSZqBJnTZo6mtw&s')` }}>
     <div className="w-full max-w-sm mx-auto overflow-hidden rounded-lg shadow-md dark:bg-gray-800 mt-40 bg-gradient-to-tr from-indigo-800">
   <div className="px-6 py-6 bg-transparent">
     <div className="flex justify-center mx-auto">
      
     </div>
-    <h3 className="mt-3 text-xl font-bold text-center text-black-600 dark:text-gray-600">
+    <h3 className="mt-3 text-xl font-bold text-center text-indigo-300 dark:text-white-600">
       Welcome Back
     </h3>
     <p className="mt-1 text-center text-black-500 dark:text-gray-400 font-medium">
