@@ -111,11 +111,7 @@ style={{backgroundImage: `url('https://images.unsplash.com/photo-1659574086903-f
             
               <div className="grid grid-cols-2 gap-4">
                
-                
-               
-               <div>
 
-               </div>
                
                 <div className="relative col-span-full">
                  

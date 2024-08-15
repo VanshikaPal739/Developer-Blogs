@@ -41,15 +41,15 @@ const Navbar = () => {
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                    href="#"
+                    href="create-blog"
                   >
-                   Title
+                   Register
                   </Link>
                 </div>
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                    href="#"
+                    href="About "
                   >
                     About
                   </Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                    href="#"
+                    href="blog-listing"
                   >
                     Blog
                   </Link>
