@@ -10,6 +10,7 @@ const BlogListing = () => {
     console.table(res.data);
     setblogList(res.data);
    }
+   
 const deleteBlog = (id) => {
   axios.delete('http://localhost:5000/blog/delete/'+id)
   .then((response) => {
@@ -20,6 +21,7 @@ const deleteBlog = (id) => {
     toast.error('Failed to delete blog');
   });
 }
+
 useEffect(()=> {
   if(!runOnce.current){
     fetchBlogs();
