@@ -13,7 +13,7 @@ const Footers = () => {
             <a
               className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80"
               href="#"
-              aria-label="Brand"
+              aria-label="Explore"
             >
              Explore
             </a>
