@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Navbar from '../Navbar/page'
 
 const HeroSection = () => {
   return (
@@ -7,6 +8,7 @@ const HeroSection = () => {
     <>
   {/* Hero */}
   <div className="relative overflow-hidden">
+   
     {/* Gradients */}
     <div
       aria-hidden="true"
@@ -19,7 +21,7 @@ const HeroSection = () => {
     <div className="relative z-10">
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         <div className="max-w-2xl text-center mx-auto">
-        
+         
           {/* Title */}
           <div className="mt-5 max-w-2xl">
             <h1 className="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-5xl dark:text-neutral-200">

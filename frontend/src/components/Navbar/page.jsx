@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <>
         {/* ========== HEADER ========== */}
-        <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
+        <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 max-w-[80%] mx-auto py-7">
           <nav className="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto">
             
             {/* Button Group */}
@@ -18,8 +18,6 @@ const Navbar = () => {
               >
                 Sign in
               </Link>
-             
-             
             </div>
             {/* End Button Group */}
             {/* Collapse */}
@@ -38,6 +36,8 @@ const Navbar = () => {
                     Home
                   </Link>
                 </div>
+
+
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
@@ -46,6 +46,8 @@ const Navbar = () => {
                    Register
                   </Link>
                 </div>
+
+
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
@@ -54,6 +56,9 @@ const Navbar = () => {
                     About
                   </Link>
                 </div>
+
+
+
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
@@ -62,6 +67,9 @@ const Navbar = () => {
                     Blog
                   </Link>
                 </div>
+
+
+
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"

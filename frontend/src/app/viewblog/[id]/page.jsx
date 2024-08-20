@@ -6,10 +6,10 @@ import React, { useEffect, useState } from 'react'
 const viewblog = () => {
 
     const { id } = useParams();
-    const [blogData, setblogData] = useState({});
+    const [blogData, setblogData] = useState(null);
 
     const fetchPlanData = async () => {
-        const res = await fetch("http://localhost:5000/blogs/getbyid/" + id);
+        const res = await fetch("http://localhost:5000/blog/getbyid/" + id);
         console.log(res.status);
 
         const data = await res.json();
@@ -21,15 +21,36 @@ const viewblog = () => {
         fetchPlanData();
     }, []);
 
-return (
-    <div className=' border-2 grid grid-cols-6 bg-gray-600 h-40 w-40 '>
-        <div>
-            <MDEditor.Markdown source={blogData.content} style={{whiteSpace:'pre-wrap'}}></MDEditor.Markdown>
+    const displayBlog = () => {
+        if (blogData !== null) {
+            return (
+                <div className="max-w-2xl">
+                    {/* Avatar Media */}
+                    
+                    <p>Posted On : {new Date(blogData.createdAt).toLocaleDateString()}</p>
+                    <h1 className='text-5xl font-bold mb-5'>{blogData.title}</h1>
 
 
+                    {/* End Avatar Media */}
+                    {/* Content */}
+                    <MDEditor.Markdown source={blogData.content} style={{ whiteSpace: 'pre-wrap' }} ></MDEditor.Markdown>
+                    {/* End Content */}
+                </div>
+            )
+        } else {
+            return <h1>Loading ...</h1>
+        }
+    }
+
+    return (
+        <>
+            {/* Blog Article */}
+            <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+                {displayBlog()}
             </div>
-    </div>
-)
+        </>
+
+    )
 }
 
 export default viewblog

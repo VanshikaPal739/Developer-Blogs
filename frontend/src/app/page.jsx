@@ -8,8 +8,8 @@ import Footers from '@/components/Footers/page';
  const Home = () => {
   return(
     <div className='bg-cover h-screen p-2' style={{backgroundImage:`url('')`}}>
-     <Navbar/>
-      
+   
+   <Navbar/>   
 <HeroSection/>
 <Features/>
 <Footers/>

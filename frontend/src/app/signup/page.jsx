@@ -6,10 +6,12 @@ import React from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
+
 const signupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Required')
 });
+
 
 const signup = () => {
 
@@ -34,12 +36,12 @@ const signup = () => {
           if (err.response.data.code === 11000) {
             toast.error('Email already exists')
           }
-
           setSubmitting(false);
         });
     },
     validationSchema: signupSchema
   })
+
 
   return (
     <div>
@@ -103,6 +105,7 @@ const signup = () => {
                       )
                     }
                   </div>
+
                   <div>
                     <label
                       htmlFor="email"
@@ -126,6 +129,7 @@ const signup = () => {
                       )
                     }
                   </div>
+                  
                   <div className="mt-6">
                     <div className="flex justify-between mb-2">
                       <label
