@@ -44,7 +44,7 @@ const displayBlogs = () => {
         </h2>
       </div>
       <div className="lg:w-1/2">
-        <p className="mb-4 text-base text-gray-700">
+        <p className="mb-4 text-lg text-gray-700">
         {blog.description}
         </p>
         <Link
@@ -72,8 +72,9 @@ const displayBlogs = () => {
 
 };
 return (
-  <div>
-  <h1 className='font-bold text-5xl'> BLOGS</h1>
+  <div className=''>
+  <h1 className='font-bold text-3xl p-8 text-center '> Publish your passions, your way</h1>
+  <p className='text-center text-lg '>Enjoy millions of blogs at your fingertips.</p>
   {displayBlogs()}
 </div>
 )

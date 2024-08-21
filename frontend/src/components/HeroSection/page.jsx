@@ -38,7 +38,7 @@ const HeroSection = () => {
           <div className="mt-8 gap-3 flex justify-center">
             <Link
               className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-              href="create-blog"
+              href="createblogg"
             >
               Get started
               <svg
@@ -58,7 +58,7 @@ const HeroSection = () => {
             </Link>
             <Link
               className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-              href="blog-listing"
+              href="addblog"
             >
               <svg
                 className="shrink-0 size-4"

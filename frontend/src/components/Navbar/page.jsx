@@ -16,7 +16,7 @@ const Navbar = () => {
                 href="signup"
                 className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white"
               >
-                Sign in
+                Sign Up
               </Link>
             </div>
             {/* End Button Group */}
@@ -41,7 +41,7 @@ const Navbar = () => {
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                    href="create-blog"
+                    href="createblogg"
                   >
                    Register
                   </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                    href="blog-listing"
+                    href="addblog"
                   >
                     Blog
                   </Link>
