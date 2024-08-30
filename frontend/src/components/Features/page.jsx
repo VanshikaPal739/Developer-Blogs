@@ -30,7 +30,7 @@ const Features = () => {
           </div>
           <div className="my-6">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-              Coading Horror
+              Coding Horror
             </h3>
             <p className="mt-5 text-gray-600 dark:text-neutral-400">
             programming and human factors
