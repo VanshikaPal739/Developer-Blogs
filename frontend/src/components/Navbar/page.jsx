@@ -12,12 +12,12 @@ const Navbar = () => {
             
             {/* Button Group */}
             <div className="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3">
-              <Link
-                href="signup"
-                className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white"
-              >
-                Sign Up
-              </Link>
+            <li className="md:mr-12">
+            <Link className="rounded-full border-2 border-cyan-500 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white"
+            href="signup">
+              Login
+            </Link>
+          </li>
             </div>
             {/* End Button Group */}
             {/* Collapse */}
@@ -73,7 +73,7 @@ const Navbar = () => {
                 <div>
                   <Link
                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                    href="#"
+                    href="contact"
                   >
                     Contact
                   </Link>

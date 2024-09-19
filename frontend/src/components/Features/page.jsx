@@ -1,142 +1,287 @@
-import Link from 'next/link'
 import React from 'react'
 
 const Features = () => {
   return (
-    <div><>
-    {/* Card Blog */}
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      {/* Title */}
-      <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-          The Blogs
-        </h2>
-        
-      </div>
-      {/* End Title */}
-      {/* Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Card */}
-        <a
-          className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-          href="https://blog.codinghorror.com/"
-        >
-          <div className="aspect-w-16 aspect-h-11">
-            <img
-              className="w-full object-cover rounded-xl"
-              src="https://i.pinimg.com/474x/93/d5/a1/93d5a1352dfe7790150e8341fa629065.jpg"
-              alt="Blog Image"
-            />
-          </div>
-          <div className="my-6">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-              Coding Horror
-            </h3>
-            <p className="mt-5 text-gray-600 dark:text-neutral-400">
-            programming and human factors
-            I Fight For The Users
-            </p>
-          </div>
-          <div className="mt-auto flex items-center gap-x-3">
-            
-            <div>
-              <h5 className="text-sm text-gray-800 dark:text-neutral-200">
-           Read more 
-              </h5>
-            </div>
-          </div>
-        </a>
-        {/* End Card */}
-        {/* Card */}
-        <Link
-          className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-          href="https://learntocodewith.me/blog/"
+    <div>
+      <>
+    <main>
+      <article>
+        <header className="mx-auto max-w-screen-xl pt-18 text-center">
           
-        >
-          <div className="aspect-w-16 aspect-h-11">
+          <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-5xl">
+          Code Chronicles: Adventures in Web Development
+          </h1>
+          <p className="mt-6 text-lg text-gray-700">
+          Painting the Digital World
+          </p>
+          <div
+            className="mt-6 flex flex-wrap justify-center gap-2"
+            aria-label="Tags"
+          >
+            <button className="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">
+              Marketing
+            </button>
+            <button className="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">
+              Branding
+            </button>
+            <button className="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">
+              Digital
+            </button>
+            <button className="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">
+              Identity
+            </button>
+          </div>
+          <img
+            className="sm:h-[34rem] mt-10 w-full object-contain"
+            src="https://huntminds.com/wp-content/uploads/2022/10/Technology-Blog-topics-750x450.jpg"
+            alt="Featured Image"
+          />
+        </header>
+        <div className="mx-auto mt-10 max-w-screen-md space-y-12 px-4 py-10 font-serif text-lg tracking-wide text-gray-700">
+          <strong className="text-2xl font-medium">
+          Developer Blog is the ultimate platform for developers to share knowledge, showcase projects, and engage with a passionate community. Whether you're a seasoned coder or just starting your journey, our platform is designed to help you create, share, and learn from the best minds in tech.
+          </strong>
+          <p>
+          Welcome to Developer Blog, where we dive deep into the world of web development! Whether you're a seasoned developer or just starting out, our blog offers a wealth of resources, tips, and tutorials to help you build better, faster, and more innovative websites. From exploring the latest trends in technology to solving common coding challenges, we're here to empower your journey in the ever-evolving landscape of web development. Join us as we share insights, best practices, and the occasional hack to elevate your skills and projects.
+          </p>
+        
+        </div>
+      </article>
+    </main>
+    <div className="w-fit mx-auto mt-10 flex space-x-2">
+      <div className="h-0.5 w-2 bg-gray-600" />
+      <div className="h-0.5 w-32 bg-gray-600" />
+      <div className="h-0.5 w-2 bg-gray-600" />
+    </div>
+    <aside
+      aria-label="Related Articles"
+      className="mx-auto mt-18 max-w-screen-xl py-20"
+    >
+      <h2 className="mb-8 text-center text-5xl font-bold text-gray-900">
+        More Blogs
+      </h2>
+      <div className="mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-8 md:grid-cols-3">
+        <article className="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg">
+          <a href="https://blog.codinghorror.com/">
             <img
-              className="w-full object-cover rounded-xl"
-              src="https://blog.codingblocks.com/content/images/size/w600/2019/12/1-cover.png"
-              alt="Blog Image"
+              src="https://c8.alamy.com/comp/2FKBAF4/front-end-web-developer-entering-programming-code-language-for-website-on-laptop-mix-media-background-2FKBAF4.jpg"
+              className="h-56 w-full object-cover"
+              alt=""
             />
-          </div>
-          <div className="my-6">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-            The Learn to Code With Me Blog
-            </h3>
-            <p className="mt-5 text-gray-600 dark:text-neutral-400">
-            The Technical Interview Questions You Must Be Able to Answer.
-            </p>
-          </div>
-          <div className="mt-auto flex items-center gap-x-2 ">
-            
-            <div>
-              <h5 className="text-sm text-gray-800 dark:text-neutral-200">
-               Read more
-              </h5>
+            <div className="flex-auto px-6 py-5">
+              <span className="mb-2 flex items-center text-sm font-semibold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-2 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                 
+                </svg>
+              
+              </span>
+              <h3 className="mt-4 mb-3 text-xl font-semibold xl:text-2xl">
+              Coding Horror
+              </h3>
+              <p className="mb-4 text-base font-light">
+              programming and human factors <br />
+              I Fight For The Users <br />
+If you haven't been able to keep up with my blistering pace of one blog post per year, <br /> I don't blame you. <br />
+              </p>
+              <span className="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">
+                Read Now
+              </span>
             </div>
-          </div>
-        </Link>
-        {/* End Card */}
-        {/* Card */}
+          </a>
+        </article>
+        <article className="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg">
+          <a href="https://www.linkedin.com/learning/?trk=lynda_redirect_learning">
+            <img
+              src="https://thumbs.dreamstime.com/b/web-development-coding-programming-internet-technology-business-concept-web-development-coding-programming-internet-technology-100232725.jpg"
+              className="h-56 w-full object-cover"
+              alt=""
+            />
+            <div className="flex-auto px-6 py-5">
+              <span className="mb-2 flex items-center text-sm font-semibold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-2 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                </svg>
+                
+              </span>
+              <h3 className="mt-4 mb-3 text-xl font-semibold xl:text-2xl">
+              Keep learning in the moments that matter
+              </h3>
+              <p className="mb-4 text-base font-light">
+              Get guidance to develop the critical skills you need to advance your career from the only learning platform informed by world’s largest marketplace.
+              </p>
+              <span className="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">
+                Read Now
+              </span>
+            </div>
+          </a>
+        </article>
+        <article className="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg">
+          <a href="https://learntocodewith.me/blog/">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/022/572/610/non_2x/web-development-coding-programming-internet-technology-business-concept-businessman-hand-holding-web-development-icon-on-virtual-screen-photo.jpg"
+              className="h-56 w-full object-cover"
+              alt=""
+            />
+            <div className="flex-auto px-6 py-5">
+              <span className="mb-2 flex items-center text-sm font-semibold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-2 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  
+                </svg>
+              
+              </span>
+              <h3 className="mt-4 mb-3 text-xl font-semibold xl:text-2xl">
+              The Learn to Code With Me Blog
+              </h3>
+              <p className="mb-4 text-base font-light">
+             
+               If there’s likely to be a technical interview in your near future, one of the best ways to prepare is by familiarizing yourself with common technical interview questions.
+              </p>
+              <span className="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">
+                Read Now
+              </span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </aside>
+  </>
+  <section className="bg-white py-6 sm:py-8 lg:py-12">
+  <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+    {/* Heading */}
+    <div className="relative mb-10 pt-8 md:mb-16">
+      <h2 className="mb-2 text-center font-serif text-3xl font-bold text-gray-800 md:mb-6 md:text-4xl">
+      Empower Your Voice in the Developer Community
+      </h2>
+      <span className="absolute left-1/2 top-0 rounded-lg bg-cyan-400 px-2 text-white">
+        Features    
+      </span>
+    </div>
+    {/* /Heading */}
+    <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 xl:grid-cols-4 xl:gap-16">
+      {/* Article */}
+      <article className="">
         <a
-          className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-          href="https://www.linkedin.com/learning/?trk=lynda_redirect_learning"
+          className="block rounded-lg bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 p-2 transition hover:scale-105"
+          href="#"
         >
-          <div className="aspect-w-16 aspect-h-11">
-            <img
-              className="w-full object-cover rounded-xl"
-              src="https://contentstatic.techgig.com/photo/77672235/top-8-programming-blogs-that-every-software-developer-must-read.jpg?150543"
-              alt="Blog Image"
-            />
-          </div>
-          <div className="my-6">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-            Keep learning in the moments that matter
-            </h3>
-            <p className="mt-5 text-gray-600 dark:text-neutral-400">
-            Expert-led courses across a variety of online class topics for every step of your career. Instructors with real-world experience.
+          <h2 className="mx-4 mt-4 mb-10 font-serif text-2xl font-semibold text-white">
+          Create Your Own Blog <br />
+          Share Your Knowledge
+          </h2>
+          <div className="flex items-center rounded-md px-4 py-3">
+          
+            <p className="ml-4 w-56">
+              <strong className="block text-lg font-medium text-white">
+              Developer Blog
+              </strong>
+              <span className="text-xs text-white">
+                {" "}
+                A small hub for tech blogs{" "}
+              </span>
             </p>
-          </div>
-          <div className="mt-auto flex items-center gap-x-3">
-           
-            <div>
-              <h5 className="text-sm text-gray-800 dark:text-neutral-200">
-               Read more
-              </h5>
-            </div>
           </div>
         </a>
-        {/* End Card */}
-      </div>
-      {/* End Grid */}
-      {/* Card */}
-      <div className="mt-12 text-center">
-        <Link
-          className="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-          href=""
+      </article>
+      {/* /Article */}
+      {/* Article */}
+      <article className="">
+        <a
+          className="block rounded-lg bg-gradient-to-r from-blue-500 via-sky-400 to-cyan-400 p-2 transition hover:scale-105"
+          href="#"
         >
-          Read more
-          <svg
-            className="shrink-0 size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </Link>
-      </div>
-      {/* End Card */}
+          <h2 className="mx-4 mt-4 mb-10 font-serif text-2xl font-semibold text-white">
+          Discover Inspiring Content 
+          Explore Developer Blogs
+          </h2>
+          <div className="flex items-center rounded-md px-4 py-3">
+           
+            <p className="ml-4 w-56">
+              <strong className="block text-lg font-medium text-white">
+              Developer Blog
+              </strong>
+              <span className="text-xs text-white">
+                {" "}
+                A small hub for tech blogs{" "}
+              </span>
+            </p>
+          </div>
+        </a>
+      </article>
+      {/* /Article */}
+      {/* Article */}
+      <article className="">
+        <a
+          className="block rounded-lg bg-gradient-to-r from-purple-500 via-indigo-400 to-indigo-400 p-2 transition hover:scale-105"
+          href="#"
+        >
+          <h2 className="mx-4 mt-4 mb-10 font-serif text-2xl font-semibold text-white">
+          Learn and Grow 
+          Tutorials and Guides regarding tech
+          </h2>
+          <div className="flex items-center rounded-md px-4 py-3">
+         
+            <p className="ml-4 w-56">
+              <strong className="block text-lg font-medium text-white">
+              Developer Blog
+              </strong>
+              <span className="text-xs text-white">
+                {" "}
+                A small hub for tech blogs{" "}
+              </span>
+            </p>
+          </div>
+        </a>
+      </article>
+      {/* /Article */}
+      {/* Article */}
+      <article className="">
+        <a
+          className="block rounded-lg bg-gradient-to-r from-fuchsia-500 via-pink-500 to-rose-400 p-2 transition hover:scale-105"
+          href="#"
+        >
+          <h2 className="mx-4 mt-4 mb-10 font-serif text-2xl font-semibold text-white">
+          Connect and Collaborate
+          Engage with the Community
+          </h2>
+          <div className="flex items-center rounded-md px-4 py-3">
+            
+            <p className="ml-4 w-56">
+              <strong className="block text-lg font-medium text-white">
+                Developer Blog
+              </strong>
+              <span className="text-xs text-white">
+                {" "}
+                A small hub for tech blogs{" "}
+              </span>
+            </p>
+          </div>
+        </a>
+      </article>
+      {/* /Article */}
     </div>
-    {/* End Card Blog */}
-  </>
+  </div>
+</section>
+
   </div>
   )
 }

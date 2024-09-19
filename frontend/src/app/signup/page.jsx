@@ -179,7 +179,7 @@ const signup = () => {
                   >
                     login
                   </a>
-                  .
+                  
                 </p>
               </div>
             </div>
