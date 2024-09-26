@@ -13,16 +13,7 @@ const addblog = () => {
   setblogList(res.data);
 }
 
-const deleteBlog = (id) => {
-  axios.delete('http://localhost:5000/blog/delete/' + id)
-    .then((response) => {
-      toast.success('Blog Deleted Successfully');
-      fetchBlogs();
-    }).catch((err) => {
-      console.log(err);
-      toast.error('Failed to delete blog');
-    });
-}
+
 
 
 useEffect(() => {
@@ -57,15 +48,7 @@ const displayBlogs = () => {
           <img src={blog.cover} loading="lazy" alt={blog.cover} class="h-full w-full object-cover object-center" />
         </div>
       </div>
-      <div className="size-px whitespace-nowrap">
-          <button 
-          onClick={()=> {deleteBlog(blog._id)}}
-          className="item center text-sm text-white bg-red-600 rounded-lg p-1"
-          href="#">
-            Delete
-          </button>
-
-        </div>
+ 
      
     </div>
   </div>

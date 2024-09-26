@@ -2,23 +2,35 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
+import * as Yup from 'yup'; // Validation with Yup
 import { useState } from 'react';
 import MDEditor from '@uiw/react-md-editor';
-import React from 'react'
+import React from 'react';
 
-
-const createBlog = () => {
+const createBlogg = () => {
   const router = useRouter();
-  const [markdownContent, setMarkdownContent] = useState("**Add Blog**")
+  const [markdownContent, setMarkdownContent] = useState("**Add Blog**");
   const [imgUrl, setImgUrl] = useState('');
 
-  const createblogForm = useFormik({
+  // Formik validation schema using Yup
+  const validationSchema = Yup.object({
+    title: Yup.string()
+      .min(5, 'Title must be at least 5 characters')
+      .required('Title is required'),
+    description: Yup.string()
+      .min(10, 'Description must be at least 10 characters')
+      .required('Description is required'),
+    cover: Yup.string().required('Cover image is required'),
+  });
+
+  const createbloggForm = useFormik({
     initialValues: {
       title: '',
       description: '',
       cover: '',
       content: ''
     },
+    validationSchema,
     onSubmit: (values, { resetForm, setSubmitting }) => {
       values.content = markdownContent;
       console.log(values);
@@ -27,101 +39,112 @@ const createBlog = () => {
         .then((response) => {
           console.log(response.status);
           resetForm();
-
-        }).catch((err) => {
+          setSubmitting(false);
+          router.push('/success');
+        })
+        .catch((err) => {
           console.log(err);
-
           setSubmitting(false);
         });
     },
-  })
+  });
 
   const uploadToCloud = (e) => {
     const file = e.target.files[0];
     if (!file) return;
     const fd = new FormData();
-    fd.append('file', file); //append means to add
+    fd.append('file', file);
     fd.append('upload_preset', 'vpsdft12');
     fd.append('cloud_name', 'daxpdc19i');
-    axios.post('https://api.cloudinary.com/v1_1/daxpdc19i/image/upload', fd,
-      { headers: { 'Content-Type': 'multipart/form-data' } }
-    )
-      .then((response) => {
-        console.log(response.data);
-        const { url } = response.data;
-        setImgUrl(url);
-        createblogForm.values.cover = url;
 
-      }).catch((err) => {
-        console.log(err);
-      });
-  }
-
+    axios.post('https://api.cloudinary.com/v1_1/daxpdc19i/image/upload', fd, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+    .then((response) => {
+      const { url } = response.data;
+      setImgUrl(url);
+      createbloggForm.setFieldValue('cover', url);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
 
   return (
-    <div className=''>
-      <>
-        {/* Hero */}
-        <div className="relative overflow-hidden h-screen">
-          <div className="mx-auto max-w-screen-md py-12 px-4 sm:px-6 md:max-w-screen-xl md:py-20 lg:py-32 md:px-8">
-            <div className="md:pe-8 md:w-1/2 xl:pe-0 xl:w-5/12">
-              {/* Title */}
-              <h1 className="text-3xl text-gray-800 font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-neutral-200">
-                Solving problems for every{" "}
-                <span className="text-blue-600 dark:text-blue-500">team</span>
-              </h1>
+    <div className="min-h-screen bg-gray-50 py-10">
+      <div className="container mx-auto px-4 lg:px-0">
+        <h1 className="text-4xl font-bold mb-8 text-center">Create a New Blog</h1>
 
-              {/* End Title */}
+        <form onSubmit={createbloggForm.handleSubmit} className="space-y-6 max-w-3xl mx-auto">
+          {/* Title Input */}
+          <div className="relative">
+            <input
+              id="title"
+              placeholder="Blog Title"
+              onChange={createbloggForm.handleChange}
+              value={createbloggForm.values.title}
+              className={`peer w-full border-b border-gray-300 p-4 focus:outline-none focus:border-gray-600 transition-all duration-300 ${createbloggForm.errors.title ? 'border-red-500' : 'border-gray-300'}`}
+            />
+            {createbloggForm.errors.title && <div className="text-red-500 text-sm mt-1">{createbloggForm.errors.title}</div>}
+          </div>
 
-              <form onSubmit={createblogForm.handleSubmit}>
-                <label htmlFor="">Title</label>
-                <textarea
-                  id='title'
-                  onChange={createblogForm.handleChange}
-                  value={createblogForm.values.title}
-                  type="text"
-                  className="bg-gray-100 text-black font-xl  border-black-700 w-full  p-4 ">
-                </textarea>
+          {/* Description Input */}
+          <div className="relative">
+            <input
+              id="description"
+              placeholder="Blog Description"
+              onChange={createbloggForm.handleChange}
+              value={createbloggForm.values.description}
+              className={`peer w-full border-b border-gray-300 p-4 focus:outline-none focus:border-gray-600 transition-all duration-300 ${createbloggForm.errors.description ? 'border-red-500' : 'border-gray-300'}`}
+            />
+            {createbloggForm.errors.description && <div className="text-red-500 text-sm mt-1">{createbloggForm.errors.description}</div>}
+          </div>
 
-
-                <label htmlFor="">Description</label>
-                <textarea
-                  id='description'
-                  onChange={createblogForm.handleChange}
-                  value={createblogForm.values.description}
-                  type="text"
-                  className="bg-gray-100 text-black font-xl  border-black-700 w-full  p-4 ">
-                </textarea>
-
-                <label htmlFor="img-upload" className='border p-4 mt-3 block'>Upload Image</label>
-                <input id='img-upload' type="file" className='hidden' onChange={uploadToCloud} />
-
-                <div className="grid">
-
-                  <button
-                    type="submit"
-                    disabled={createblogForm.isSubmitting || !imgUrl}
-                    className="cursor-pointer bg-blue-500 disabled:opacity-50 rounded-md text-white font-semibold transition duration-300 ease-in-out hover:bg-blue-700 hover:ring-2 hover:ring-blue-800 hover:shadow-xl hover:shadow-blue-500 focus:ring-blue-300 focus:shadow-blue-400 px-5 py-2 mt-2">
-                    Submit
-                  </button>
-                </div>
-              </form>
-
-              <div>
-                <MDEditor value={markdownContent} id={markdownContent} onChange={(v) => setMarkdownContent(v)} />
+          {/* Image Upload */}
+          <div>
+            <label htmlFor="img-upload" className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out">
+              Upload Cover Image
+            </label>
+            <input
+              id="img-upload"
+              type="file"
+              className="hidden"
+              onChange={uploadToCloud}
+            />
+            {imgUrl && (
+              <div className="mt-4">
+                <img src={imgUrl} alt="Uploaded cover" className="rounded-lg shadow-md" />
               </div>
-              {/* Form */}
+            )}
+          </div>
 
-              {/* End Form */}
+          {/* Markdown Editor */}
+          <div>
+            <MDEditor
+              value={markdownContent}
+              onChange={(value) => setMarkdownContent(value)}
+              className="p-4 bg-white border border-gray-300 rounded-lg shadow-sm"
+            />
+            <h2 className="mt-4 text-lg font-semibold">Markdown Preview:</h2>
+            <div className="prose max-w-none mt-2 p-4 bg-gray-100 border border-gray-300 rounded-lg">
+              <MDEditor.Markdown source={markdownContent} />
             </div>
           </div>
-          <div className="hidden md:block md:absolute md:top-0 md:start-1/2 md:end-0 h-full bg-[url('https://iscodingforyou.com/blog-3-big.png')] bg-no-repeat bg-center bg-cover" />
-          {/* End Col */}
-        </div>
-        {/* End Hero */}
-      </>
-    </div>
-  )
-}
 
-export default createBlog;
+          {/* Submit Button */}
+          <div className="text-center">
+            <button
+              type="submit"
+              disabled={createbloggForm.isSubmitting || !imgUrl}
+              className="bg-purple-600 hover:bg-purple-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out hover:ring-2 hover:ring-purple-300"
+            >
+              {createbloggForm.isSubmitting ? 'Submitting...' : 'Create Blog'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default createBlogg;
